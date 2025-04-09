@@ -1,11 +1,17 @@
 {
   "dependencies": {
+    "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^5.1.0",
+    "joi": "^17.13.3",
+    "joi-oid": "^1.1.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.13.2",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "passport": "^0.7.0",
+    "passport-google-oauth": "^2.0.0",
+    "passport-jwt": "^4.0.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"
@@ -18,7 +24,10 @@
   "scripts": {
     "start": "node ./server.js",
     "dev": "nodemon ./server.js",
-    "dataUsers": "node ./models/data/users.js"
+    "dataUsers": "node ./models/data/users.js",
+    "dataStores": "node ./models/data/stores.js",
+    "dataItems": "node ./models/data/items.js",
+    "dataProducts": "node ./models/data/products.js"
   },
   "keywords": [],
   "author": "",
