@@ -59,6 +59,6 @@ const userCreateSchema = joi.object({
     online: joi.boolean().optional().messages({
         'boolean.base': 'Online debe ser un valor booleano'
     })
-}).options({ abortEarly: false, stripUnknown: true });
+})
 
 export default userCreateSchema;
