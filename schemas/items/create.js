@@ -1,6 +1,6 @@
 import joi from "joi";
 
-const productCreateSchema = joi.object({
+const itemCreateSchema = joi.object({
     name: joi.string().trim().min(2).max(80).required().messages({
         'string.base': 'El nombre debe ser un texto',
         'string.empty': 'El nombre es requerido',
@@ -41,7 +41,12 @@ const productCreateSchema = joi.object({
         'string.length': 'El userId debe tener 24 caracteres',
         'string.hex': 'El userId debe ser un ObjectId valido',
         'any.required': 'El userId es requerido'
+    }),
+    storeId: joi.string().trim().length(24).hex().required().messages({
+        'string.length': 'El storeId debe tener 24 caracteres',
+        'string.hex': 'El storeId debe ser un ObjectId valido',
+        'any.required': 'El storeId es requerido'
     })
 }).options({ abortEarly: false, stripUnknown: true });
 
-export default productCreateSchema;
+export default itemCreateSchema;
