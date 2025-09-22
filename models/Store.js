@@ -7,7 +7,7 @@ let schema = new Schema({
     description: {type: String, required: true},
     photoUrl: {type: String, required: true},
     address: {type: String, required: true},
-    phone: {type: String, required: true}
+    phone: {type: Number, required: true}
 },{
     timestamps: true
 })
