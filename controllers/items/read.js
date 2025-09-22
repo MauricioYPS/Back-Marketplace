@@ -11,7 +11,7 @@ let readAll = async (req, res, next) => {
     }
 }
 
-let readByID = async (req, res, next) => {
+let readById = async (req, res, next) => {
     try {
         let itemQuery = req.params.id
         let item = await Items.find({ _id: itemQuery })
@@ -23,4 +23,16 @@ let readByID = async (req, res, next) => {
     }
 }
 
-export { readAll, readByID }
+let readByStoreID = async (req, res, next) => {
+    try {
+        let itemQuery = req.params.id
+        let item = await Items.find({ storeId: itemQuery })
+        return res.status(200).json({
+            response: item
+        })
+    } catch (error) {
+        next(error)
+    }
+}
+
+export { readAll, readByStoreID, readById }

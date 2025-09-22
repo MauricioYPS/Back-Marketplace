@@ -23,4 +23,16 @@ let readById = async (req, res, next) => {
     }
 }
 
-export { readAll, readById }
+let readByUserID = async (req, res, next) => {
+    try {
+        let storeQuery = req.params.id
+        let store = await Store.find({ userId: storeQuery })
+        return res.status(200).json({
+            response: store
+        })
+    } catch (error) {
+        next(error)
+    }
+}
+
+export { readAll, readById, readByUserID }
