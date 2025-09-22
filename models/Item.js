@@ -14,5 +14,5 @@ let schema = new Schema({
     timestamps: true
 })
 
-let Item = model(collection, schema)
-export default Item
+let Items = model(collection, schema)
+export default Items
