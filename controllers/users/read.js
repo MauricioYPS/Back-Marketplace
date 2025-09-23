@@ -23,6 +23,18 @@ let userById = async (req, res, next) => {
     }
 }
 
+let userByEmail = async (req, res, next) => {
+    try {
+        let userQuery = req.params.email
+        let user = await User.find({ email: userQuery })
+        return res.status(200).json({
+            response: user
+        })
+    } catch (error) {
+        next(error)
+    }
+}
+
 let oneUser = async (req, res, next) => {
     try {
         let doc = await User.findOne(req.user)
@@ -36,4 +48,4 @@ let oneUser = async (req, res, next) => {
     }
 }
 
-export { allUsers, userById, oneUser }
+export { allUsers, userById, oneUser, userByEmail }
