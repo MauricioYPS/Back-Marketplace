@@ -41,6 +41,13 @@ const productCreateSchema = joi.object({
         'string.length': 'El userId debe tener 24 caracteres',
         'string.hex': 'El userId debe ser un ObjectId valido',
         'any.required': 'El userId es requerido'
+    }),
+    tipe: joi.string().trim().min(2).max(50).required().messages({
+        'string.base': 'El tipe debe ser un texto',
+        'string.empty': 'El tipe es requerido',
+        'string.min': 'El tipe debe tener al menos 2 caracteres',
+        'string.max': 'El tipe no puede superar los 50 caracteres',
+        'any.required': 'El tipe es requerido'
     })
 }).options({ abortEarly: false, stripUnknown: true });
 
