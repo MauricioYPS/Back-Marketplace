@@ -8,6 +8,7 @@ let schema = new Schema({
     stock: {type: Number, required: true},
     photoUrl: {type: String, required: true},
     category: {type: String, required: true},
+    tipe: {type: String, required: true},
     userId: {type: Schema.Types.ObjectId,ref: "Users", required: true},
 },{
     timestamps: true
