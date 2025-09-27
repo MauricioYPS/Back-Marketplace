@@ -25,11 +25,7 @@ const productCreateSchema = joi.object({
         'number.min': 'El stock no puede ser negativo',
         'any.required': 'El stock es requerido'
     }),
-    photoUrl: joi.string().trim().uri({ scheme: ['http', 'https'] }).required().messages({
-        'string.uri': 'La URL de la foto debe comenzar con http:// o https://',
-        'string.empty': 'La URL de la foto es requerida',
-        'any.required': 'La URL de la foto es requerida'
-    }),
+    photoUrl: joi.string().min(3).required(),
     category: joi.string().trim().min(2).max(50).required().messages({
         'string.base': 'La categoria debe ser un texto',
         'string.empty': 'La categoria es requerida',
